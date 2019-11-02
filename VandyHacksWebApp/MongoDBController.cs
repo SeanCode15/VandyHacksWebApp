@@ -14,6 +14,12 @@ namespace VandyHacksWebApp
 {
     public class MongoDBController
     {
+        private const string userName = "";
+        private const string passWord = "";
+        private static readonly string connectionString = "mongodb://" + 
+            userName + ":" + passWord + 
+            "@104.198.49.23:27017/nic0";
+        
         readonly MongoDatabase mongoDatabase;
 
         public MongoDBController()
@@ -23,14 +29,13 @@ namespace VandyHacksWebApp
         private MongoDatabase RetreiveMongohqDb()
         {
             MongoClient mongoClient = new MongoClient(
-                new MongoUrl(ConfigurationManager.ConnectionStrings
-                 ["MongoHQ"].ConnectionString));
+                new MongoUrl(connectionString));
             MongoServer server = mongoClient.GetServer();
-            return mongoClient.GetServer().GetDatabase("MyFirstDb");
+            return mongoClient.GetServer().GetDatabase("instance-1");
         }
         public Contact Save(Contact contact)
         {
-            var contactsList = mongoDatabase.GetCollection("Contacts");
+            var contactsList = mongoDatabase.GetCollection("Data");
             WriteConcernResult result;
             bool hasError = false;
             if (string.IsNullOrEmpty(contact.Id))
@@ -61,7 +66,7 @@ namespace VandyHacksWebApp
         public IEnumerable<Contact> GetAll()
         {
             List<Contact> model = new List<Contact>();
-            var contactsList = mongoDatabase.GetCollection("Contacts").FindAll().AsEnumerable();
+            var contactsList = mongoDatabase.GetCollection("Data").FindAll().AsEnumerable();
             model = (from contact in contactsList
                      select new Contact
                      {
