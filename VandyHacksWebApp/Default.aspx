@@ -1,42 +1,70 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VandyHacksWebApp._Default" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<%@ Import Namespace="System" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Drawing" %>
+<%@ Import Namespace="System.Drawing.Drawing2D" %>
+<%@ Import Namespace="System.Drawing.Imaging" %>
+<%@ Import Namespace="System.Net" %>
 
     <div class="jumbotron">
         <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+       
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-            A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Get more libraries</h2>
-            <p>
-                NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-            </p>
-        </div>
-        <div class="col-md-4">
-            <h2>Web Hosting</h2>
-            <p>
-                You can easily find a web hosting company that offers the right mix of features and price for your applications.
-            </p>
-            <p>
-                <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-            </p>
-        </div>
-    </div>
+    <script language="C#" runat="server">
 
+protected void Page_Load(object sender, EventArgs e)
+{
+    //Jpeg compression quality
+    short nQuality = 45;
+
+    //Shout a picture from my webcam
+    CAMSERVERLib.Camera cam = new CAMSERVERLib.CameraClass();
+
+    byte[] picture = (byte[])cam.GrabFrame( nQuality );
+
+    //Add the hour to the jpeg picture
+    MemoryStream ms = new MemoryStream( picture );
+    Bitmap bmp = new Bitmap( ms );
+
+    Graphics g = Graphics.FromImage( bmp );
+
+    string strDate = DateTime.Now.ToLongDateString() + " - " + 
+                                       DateTime.Now.ToLongTimeString(); 
+
+	StringFormat drawFormat = new StringFormat();
+    drawFormat.Alignment = StringAlignment.Center;
+
+    g.DrawString(   strDate,
+                    new Font( FontFamily.GenericSansSerif, 12 ),
+                    new SolidBrush( Color.Black ), 
+                    new RectangleF( 1,1,320,240 ),
+                    drawFormat
+                );
+
+    g.DrawString(   strDate,
+                    new Font( FontFamily.GenericSansSerif, 12 ),
+                    new SolidBrush( Color.White ), 
+                    new RectangleF( 0,0,320,240 ),
+                    drawFormat
+                );
+
+    //Get codecs
+    ImageCodecInfo[] icf = ImageCodecInfo.GetImageEncoders();
+
+    EncoderParameters encps = new EncoderParameters( 1 );
+    EncoderParameter encp = new EncoderParameter( System.Drawing.Imaging.Encoder.Quality, 
+                                                  (long) nQuality );
+
+    //Set quality
+    encps.Param[0] = encp;
+
+    bmp.Save( Response.OutputStream, icf[1], encps );
+    
+    g.Dispose();
+    bmp.Dispose();
+}
+</script>
 </asp:Content>
