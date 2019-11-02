@@ -26,19 +26,7 @@ namespace VandyHacksWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string mappedPath = MapPath(@"Images\code.jpg");
-            //System.IO.Stream stream = new FileStream(, FileMode.Open);
-            string[] dataFromBarCode = Spire.Barcode.BarcodeScanner.Scan(mappedPath);
-
-            StringBuilder sbScript = new StringBuilder();
-
-            sbScript.Append("<script language='JavaScript' type='text/javascript'>\n");
-            sbScript.Append("<!--\n");
-            sbScript.Append(this.GetPostBackEventReference(this, "PBArg") + ";\n");
-            sbScript.Append("// -->\n");
-            sbScript.Append("</script>\n");
-
-            this.RegisterStartupScript("AutoPostBackScript", sbScript.ToString());
+            
         }
     }
 }   
