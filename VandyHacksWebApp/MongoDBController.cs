@@ -16,59 +16,59 @@ namespace VandyHacksWebApp
     {
         private const string userName = "";
         private const string passWord = "";
-        private static readonly string connectionString = "mongodb://" + 
-            userName + ":" + passWord + 
-            "@104.198.49.23:27017/nic0";
-        
+        private static readonly string connectionString1;
+        private static readonly string connectionString;
+
         readonly MongoDatabase mongoDatabase;
 
         public MongoDBController()
         {
             mongoDatabase = RetreiveMongohqDb();
+            //mongoDatabase.CreateCollection("Data");
         }
         private MongoDatabase RetreiveMongohqDb()
         {
             MongoClient mongoClient = new MongoClient(
                 new MongoUrl(connectionString));
             MongoServer server = mongoClient.GetServer();
-            return mongoClient.GetServer().GetDatabase("instance-1");
+            return mongoClient.GetServer().GetDatabase("nic0");
         }
-        public Contact Save(Contact contact)
+        public DbDataset Save(DbDataset data)
         {
             var contactsList = mongoDatabase.GetCollection("Data");
             WriteConcernResult result;
             bool hasError = false;
-            if (string.IsNullOrEmpty(contact.Id))
+            if (string.IsNullOrEmpty(data.Id))
             {
-                contact.Id = ObjectId.GenerateNewId().ToString();
-                result = contactsList.Insert<Contact>(contact);
+                data.Id = ObjectId.GenerateNewId().ToString();
+                result = contactsList.Insert<DbDataset>(data);
                 hasError = result.HasLastErrorMessage;
             }
             else
             {
-                IMongoQuery query = Query.EQ("_id", contact.Id);
+                IMongoQuery query = Query.EQ("_id", data.Id);
                 IMongoUpdate update = Update
-                 .Set("Size", contact.Size)
-                 .Set("Circumference", contact.Circumference)
-                 .Set("Width", contact.Width);
+                 .Set("Size", data.Size)
+                 .Set("Circumference", data.Circumference)
+                 .Set("Width", data.Width);
                 result = contactsList.Update(query, update);
                 hasError = result.HasLastErrorMessage;
             }
             if (!hasError)
             {
-                return contact;
+                return data;
             }
             else
             {
                 throw new HttpResponseException(HttpStatusCode.InternalServerError);
             }
         }
-        public IEnumerable<Contact> GetAll()
+        public IEnumerable<DbDataset> GetAll()
         {
-            List<Contact> model = new List<Contact>();
+            List<DbDataset> model = new List<DbDataset>();
             var contactsList = mongoDatabase.GetCollection("Data").FindAll().AsEnumerable();
             model = (from contact in contactsList
-                     select new Contact
+                     select new DbDataset
                      {
                          Id = contact["_id"].AsString,
                          Size = contact["Size"].AsString,
@@ -78,7 +78,7 @@ namespace VandyHacksWebApp
             return model;
         }
     }
-    public class Contact
+    public class DbDataset
     {
         [BsonId]
         public string Id { get; set; }
