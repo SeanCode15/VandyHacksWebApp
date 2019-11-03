@@ -20,7 +20,7 @@
             <div class="col-md-4" style="vertical-align:middle">
                 <div class="text-center" style="height: 52px; vertical-align:middle">
                     <div style="vertical-align:middle">
-                        <asp:Label runat="server" ID="gloveLbl" Font-Bold="true" Font-Size="XX-Large" Text="X-Large" ></asp:Label>
+                        <asp:Label runat="server" ID="gloveLabel" Font-Bold="true" Font-Size="XX-Large" Text="X-Large" ></asp:Label>
                     </div>                    
                 </div>
             </div>

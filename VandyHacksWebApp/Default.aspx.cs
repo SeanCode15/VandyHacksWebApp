@@ -24,7 +24,7 @@ namespace VandyHacksWebApp
                 chooseGloveTypeBtn.Text = "Change to mens'";
                 CenterPicture.Visible = false;
                 LeftPicture.Visible = false;
-                gloveLbl.Visible = false;
+                gloveLabel.Visible = false;
                 picLbl1.Visible = false;
                 picLbl2.Visible = false;
                 picLbl3.Visible = false;
@@ -109,7 +109,7 @@ namespace VandyHacksWebApp
             string sizeToDisplay = RateTheSize(circ, height, sizeBool);
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
-            gloveLbl.Visible = true;
+            gloveLabel.Visible = true;
             picLbl1.Visible = true;
             picLbl2.Visible = true;
             picLbl3.Visible = true;

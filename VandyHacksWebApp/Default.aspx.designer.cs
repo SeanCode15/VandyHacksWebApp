@@ -40,13 +40,13 @@ namespace VandyHacksWebApp {
         protected global::System.Web.UI.WebControls.Image CenterPicture;
         
         /// <summary>
-        /// gloveLbl control.
+        /// gloveLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label gloveLbl;
+        protected global::System.Web.UI.WebControls.Label gloveLabel;
         
         /// <summary>
         /// picLbl1 control.
