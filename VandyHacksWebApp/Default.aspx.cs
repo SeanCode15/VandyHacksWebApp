@@ -5,9 +5,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Drawing;
 using System.Web.UI.WebControls;
-using System.Drawing.Imaging;
 using System.IO;
 
 namespace VandyHacksWebApp
@@ -18,7 +16,7 @@ namespace VandyHacksWebApp
         {
             MongoDBController controller = new MongoDBController();
             controller.Save(new DbDataset { Id="1", Circumference=10.1f, Size="Medium", Width=4.0f });
-        }
+        
             if (!IsPostBack)
             {
                 CenterPicture.Visible = false;
