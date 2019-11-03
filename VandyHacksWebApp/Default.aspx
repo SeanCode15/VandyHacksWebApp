@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="VandyHacksWebApp._Default" %>
-
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     
     <div class="jumbotron">
         <div class="row">
@@ -49,30 +49,32 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="text-center">
-                
+        <div class="row">
+            <div class="col-md-5">
+                <div class="text-center">
+                    <asp:Button runat="server" ID="chooseGloveTypeBtn" OnClick="chooseGloveTypeBtn_Click" CssClass="btn btn-pill" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="text-center">
+                    <asp:Button runat="server" Text="Scan!" CssClass="btn btn-pill" BackColor="Lime" ID="ScanBtn" OnClick="ScanBtn_Click" Font-Bold="True" ForeColor="Black" Font-Size="Medium" />
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="text-center">
+                    <asp:Label runat="server" ID="sizeLabel"></asp:Label> 
+                </div>
             </div>
         </div>
-        <div class="col-md-2">
-            <div class="text-center">
-                <asp:Button runat="server" Text="Scan!" CssClass="btn btn-pill" BackColor="Lime" ID="ScanBtn" OnClick="ScanBtn_Click" Font-Bold="True" ForeColor="Black" Font-Size="Medium" />
+        <div class="mt-2"></div>
+        <div class="mt-2"></div>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="text-center">
+                    <asp:Label runat="server" ID="InstructionsLbl" Text="Place your hand in the middle of the platform with you fingers spread apart. Keep your hand held against the bottom and press the scan button. Hold your hand still until you are told to take it off."></asp:Label> 
+                </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-5">
-            <div class="text-center">
-                <asp:Label runat="server" ID="sizeLabel"></asp:Label> 
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class="text-center">
-                <asp:Label runat="server" ID="InstructionsLbl" Text="Place your hand in the middle of the platform with you fingers spread apart. Keep your hand held against the bottom and press the scan button. Hold your hand still until you are told to take it off."></asp:Label> 
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
 </asp:Content>

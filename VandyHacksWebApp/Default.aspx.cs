@@ -20,6 +20,8 @@ namespace VandyHacksWebApp
         
             if (!IsPostBack)
             {
+                chooseGloveTypeBtn.BackColor = Color.Aqua;
+                chooseGloveTypeBtn.Text = "Change to mens'";
                 CenterPicture.Visible = false;
                 LeftPicture.Visible = false;
                 gloveLbl.Visible = false;
@@ -99,8 +101,12 @@ namespace VandyHacksWebApp
             var dimensions = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
             float circ = (float)dimensions.circumference;
             float height = (float)dimensions.height;
-
-            string sizeToDisplay = RateTheSize(circ, height, false);
+            bool sizeBool = false;
+            if (chooseGloveTypeBtn.BackColor == Color.Aqua)
+            {
+                sizeBool = true;
+            }
+            string sizeToDisplay = RateTheSize(circ, height, sizeBool);
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
             gloveLbl.Visible = true;
@@ -175,5 +181,18 @@ namespace VandyHacksWebApp
             }
         }
 
+        protected void chooseGloveTypeBtn_Click(object sender, EventArgs e)
+        {
+            if (chooseGloveTypeBtn.BackColor == Color.Aqua)
+            {
+                chooseGloveTypeBtn.Text = "Change to Womens'";
+                chooseGloveTypeBtn.BackColor = Color.Orange;
+            }
+            else
+            {
+                chooseGloveTypeBtn.Text = "Change to Mens'";
+                chooseGloveTypeBtn.BackColor = Color.Aqua;
+            }
+        }
     }
 }   
