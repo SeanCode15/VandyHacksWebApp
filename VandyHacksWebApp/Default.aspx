@@ -4,7 +4,6 @@
     
     <div class="jumbotron">
         <div class="row">
-            
             <div class="col-md-4">
                 <div class="text-center">
                     <asp:Image ImageAlign="Middle" Height="250" Width="350" ID="LeftPicture" AlternateText="" runat="server" />
@@ -17,15 +16,18 @@
                     <asp:Image ImageAlign="Middle" Height="250" Width="350" ID="CenterPicture" AlternateText="" runat="server" />
                 </div>
             </div>
-            <div class="col-md-4" style="vertical-align:middle">
-                <div class="text-center" style="height: 52px; vertical-align:middle">
-                    <div style="vertical-align:middle">
-                        <asp:Label runat="server" ID="gloveLabel" Font-Bold="true" Font-Size="XX-Large" Text="X-Large" ></asp:Label>
-                    </div>                    
+            <div class="jumbotron" style="background-color:gray" runat="server" id="superJumbo">
+                <div class="col-md-4" style="vertical-align:bottom">
+                    <div class="text-center" style="height: 52px; vertical-align:bottom">
+                        <div style="vertical-align:bottom">
+                            <asp:Label runat="server" ID="gloveLabel" Font-Bold="true" Font-Size="XX-Large" Text="X-Large" ></asp:Label>
+                        </div>                    
+                    </div>
                 </div>
             </div>
-
         </div>
+
+        
         
         
         
@@ -44,7 +46,6 @@
         
             <div class="col-md-4">
                 <div class="text-center">
-                    <asp:Label ID="picLbl3" runat="server" Text="Recommended Glove"></asp:Label>
                 </div>
             </div>
         </div>

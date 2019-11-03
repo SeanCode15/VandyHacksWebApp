@@ -40,6 +40,15 @@ namespace VandyHacksWebApp {
         protected global::System.Web.UI.WebControls.Image CenterPicture;
         
         /// <summary>
+        /// superJumbo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl superJumbo;
+        
+        /// <summary>
         /// gloveLabel control.
         /// </summary>
         /// <remarks>
@@ -65,15 +74,6 @@ namespace VandyHacksWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label picLbl2;
-        
-        /// <summary>
-        /// picLbl3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label picLbl3;
         
         /// <summary>
         /// chooseGloveTypeBtn control.

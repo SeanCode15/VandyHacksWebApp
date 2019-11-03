@@ -27,8 +27,8 @@ namespace VandyHacksWebApp
                 gloveLabel.Visible = false;
                 picLbl1.Visible = false;
                 picLbl2.Visible = false;
-                picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
+                superJumbo.Visible = false;
             }
             
             //var files = FileSearcher.GetAllFileSets();
@@ -112,8 +112,8 @@ namespace VandyHacksWebApp
             gloveLabel.Visible = true;
             picLbl1.Visible = true;
             picLbl2.Visible = true;
-            picLbl3.Visible = true;
             PlaceholderLbl.Visible = false;
+            superJumbo.Visible = true;
             gloveLabel.Text = sizeToDisplay;
 
 
