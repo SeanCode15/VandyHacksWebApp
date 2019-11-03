@@ -22,7 +22,7 @@ namespace VandyHacksWebApp
             {
                 CenterPicture.Visible = false;
                 LeftPicture.Visible = false;
-                RightPicture.Visible = false;
+                gloveLbl.Visible = false;
                 picLbl1.Visible = false;
                 picLbl2.Visible = false;
                 picLbl3.Visible = false;
@@ -103,7 +103,7 @@ namespace VandyHacksWebApp
             string sizeToDisplay = RateTheSize(circ, height, false);
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
-            RightPicture.Visible = true;
+            gloveLbl.Visible = true;
             picLbl1.Visible = true;
             picLbl2.Visible = true;
             picLbl3.Visible = true;
@@ -112,7 +112,7 @@ namespace VandyHacksWebApp
 
             CenterPicture.ImageUrl = "Output-Skeleton.jpg"; //@"Images\code.jpg";
             LeftPicture.ImageUrl = "Output-Keypoints.jpg"; //@"Images\code.jpg";
-            RightPicture.ImageUrl = @"Images\code.jpg";
+            //RightPicture.ImageUrl = @"Images\code.jpg";
         }
 
         /// <summary>

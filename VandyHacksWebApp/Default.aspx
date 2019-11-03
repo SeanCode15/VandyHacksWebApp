@@ -7,22 +7,24 @@
             
             <div class="col-md-4">
                 <div class="text-center">
-                    <asp:Image ImageAlign="Middle" Height="200" Width="200" ID="LeftPicture" AlternateText="" runat="server" />
+                    <asp:Image ImageAlign="Middle" Height="250" Width="350" ID="LeftPicture" AlternateText="" runat="server" />
                 </div>
             </div>
         
             <div class="col-md-4">
                 <div class="text-center">
                     <asp:Label runat="server" ID="PlaceholderLbl" Text="Nothing to show yet! Please scan your hand to see the glove that will fit you!" ></asp:Label>
-                    <asp:Image ImageAlign="Middle" Height="200" Width="200" ID="CenterPicture" AlternateText="" runat="server" />
+                    <asp:Image ImageAlign="Middle" Height="250" Width="350" ID="CenterPicture" AlternateText="" runat="server" />
                 </div>
             </div>
-        
-            <div class="col-md-4">
-                <div class="text-center">
-                    <asp:Image ImageAlign="Middle" Height="200" Width="200" ID="RightPicture" AlternateText="" runat="server" />
+            <div class="col-md-4" style="vertical-align:middle">
+                <div class="text-center" style="height: 52px; vertical-align:middle">
+                    <div style="vertical-align:middle">
+                        <asp:Label runat="server" ID="gloveLbl" Font-Bold="true" Font-Size="XX-Large" Text="X-Large" ></asp:Label>
+                    </div>                    
                 </div>
             </div>
+
         </div>
         
         
