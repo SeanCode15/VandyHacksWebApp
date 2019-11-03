@@ -28,7 +28,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
-            var dimensions = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
+            
             //var files = FileSearcher.GetAllFileSets();
         }
 
@@ -96,6 +96,11 @@ namespace VandyHacksWebApp
             //process.StartInfo = startInfo;
             //process.Start();
             //System.Threading.Thread.Sleep(2000);
+            var dimensions = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
+            float circ = (float)dimensions.circumference;
+            float height = (float)dimensions.height;
+
+            string sizeToDisplay = RateTheSize(circ, height, false);
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
             RightPicture.Visible = true;
@@ -116,56 +121,56 @@ namespace VandyHacksWebApp
         /// </summary>
         /// <param name="size"></param>
         /// <param name="gender"></param>
-        public void RateTheSize(float size, bool gender)
+        public string RateTheSize(float circ, float height, bool gender)
         {
             if (gender)
             {
-                if (size < 19)
+                if (circ < 19)
                 {
-
+                    return "Extra Small";
                 }
-                else if (19 <= size && size < 21.5)
+                else if (19 <= circ && circ < 21.5)
                 {
-
+                    return "Small";
                 }
-                else if (21.5 <= size && size < 24)
+                else if (21.5 <= circ && circ < 24)
                 {
-
+                    return "Medium";
                 }
-                else if (24 <= size && size < 26.5)
+                else if (24 <= circ && circ < 26.5)
                 {
-
+                    return "Large";
                 }
-                else if (26.5 <= size && size < 29)
+                else if (26.5 <= circ && circ < 29)
                 {
-
+                    return "Extra Large";
                 }
                 else
                 {
-
+                    return "Extra Extra Large";
                 }
             }
             else
             {
-                if (size < 15.875)
+                if (circ < 15.875)
                 {
-
+                    return "Extra Small";
                 }
-                else if (15.875 <= size && size < 17.125)
+                else if (15.875 <= circ && circ < 17.125)
                 {
-
+                    return "Small";
                 }
-                else if (17.125 <= size && size < 18.375)
+                else if (17.125 <= circ && circ < 18.375)
                 {
-
+                    return "Medium";
                 }
-                else if (18.375 <= size && size < 19.625)
+                else if (18.375 <= circ && circ < 19.625)
                 {
-
+                    return "Large";
                 }
                 else
                 {
-
+                    return "Extra Large";
                 }
             }
         }
