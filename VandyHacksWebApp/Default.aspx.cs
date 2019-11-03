@@ -27,7 +27,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
-            var files = FileSearcher.GetAllFileSets();
+            //var files = FileSearcher.GetAllFileSets();
         }
 
         protected void ScanBtn_Click(object sender, EventArgs e)
@@ -46,6 +46,17 @@ namespace VandyHacksWebApp
 
             //Bitmap imageToSave = new Bitmap(ImageResize);
             //imageToSave.Save(@"Images\code.jpg", ImageFormat.Jpeg);
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+            startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            startInfo.FileName = "cmd.exe";
+
+            string fileNameWithExtension = "images/8.png";
+
+            startInfo.Arguments = @"/C C:\Users\seanb\Documents\handpose\HandPose>python handPoseImage.py " + fileNameWithExtension;
+            process.StartInfo = startInfo;
+            process.Start();
+
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
             RightPicture.Visible = true;
