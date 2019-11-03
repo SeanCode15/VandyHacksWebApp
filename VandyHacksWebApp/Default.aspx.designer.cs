@@ -22,6 +22,15 @@ namespace VandyHacksWebApp {
         protected global::System.Web.UI.WebControls.Image LeftPicture;
         
         /// <summary>
+        /// PlaceholderLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label PlaceholderLbl;
+        
+        /// <summary>
         /// CenterPicture control.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,33 @@ namespace VandyHacksWebApp {
         protected global::System.Web.UI.WebControls.Image RightPicture;
         
         /// <summary>
+        /// picLbl1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label picLbl1;
+        
+        /// <summary>
+        /// picLbl2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label picLbl2;
+        
+        /// <summary>
+        /// picLbl3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label picLbl3;
+        
+        /// <summary>
         /// ScanBtn control.
         /// </summary>
         /// <remarks>
@@ -47,5 +83,23 @@ namespace VandyHacksWebApp {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ScanBtn;
+        
+        /// <summary>
+        /// sizeLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sizeLabel;
+        
+        /// <summary>
+        /// InstructionsLbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label InstructionsLbl;
     }
 }
