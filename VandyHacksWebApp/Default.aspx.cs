@@ -27,6 +27,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
+            var lines = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
             //var files = FileSearcher.GetAllFileSets();
         }
 

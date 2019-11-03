@@ -18,6 +18,20 @@ namespace VandyHacksWebApp
         private const string XLarge = "XLarge.jpg";
         private const string XXLarge = "XXLarge.jpg";
 
+        public struct FileReturn
+        {
+            public double circumference;
+            public double height;
+        }
+        public static FileReturn GetFileInfo(string path)
+        {
+            string[] lines = File.ReadAllLines(path);
+            FileReturn fr = new FileReturn();
+            fr.circumference = Double.Parse(lines[0]);
+            fr.height = Double.Parse(lines[1]);
+            return fr;
+        }
+
         public static int GetNumberOfFileSets()
         {
             var allFiles = GetAllFileSets();
