@@ -114,6 +114,7 @@ namespace VandyHacksWebApp
             picLbl2.Visible = true;
             picLbl3.Visible = true;
             PlaceholderLbl.Visible = false;
+            gloveLabel.Text = sizeToDisplay;
 
 
             CenterPicture.ImageUrl = "Output-Skeleton.jpg"; //@"Images\code.jpg";
