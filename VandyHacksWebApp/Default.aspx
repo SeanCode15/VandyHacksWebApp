@@ -4,7 +4,6 @@
     
     <div class="jumbotron">
         <div class="row">
-            
             <div class="col-md-4">
                 <div class="text-center">
                     <asp:Image ImageAlign="Middle" Height="250" Width="350" ID="LeftPicture" AlternateText="" runat="server" />

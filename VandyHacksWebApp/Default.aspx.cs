@@ -21,7 +21,7 @@ namespace VandyHacksWebApp
             if (!IsPostBack)
             {
                 chooseGloveTypeBtn.BackColor = Color.Aqua;
-                chooseGloveTypeBtn.Text = "Change to mens'";
+                chooseGloveTypeBtn.Text = "Change to Women's";
                 CenterPicture.Visible = false;
                 LeftPicture.Visible = false;
                 gloveLabel.Visible = false;
@@ -98,6 +98,10 @@ namespace VandyHacksWebApp
             //process.StartInfo = startInfo;
             //process.Start();
             //System.Threading.Thread.Sleep(2000);
+            SetOutputs();
+        }
+        private void SetOutputs()
+        {
             var dimensions = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
             float circ = (float)dimensions.circumference;
             float height = (float)dimensions.height;
@@ -107,6 +111,11 @@ namespace VandyHacksWebApp
                 sizeBool = true;
             }
             string sizeToDisplay = RateTheSize(circ, height, sizeBool);
+            if (sizeBool)
+                sizeToDisplay = "Men's " + sizeToDisplay;
+            else
+                sizeToDisplay = "Women's " + sizeToDisplay;
+
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
             gloveLabel.Visible = true;
@@ -120,6 +129,7 @@ namespace VandyHacksWebApp
             CenterPicture.ImageUrl = "Output-Skeleton.jpg"; //@"Images\code.jpg";
             LeftPicture.ImageUrl = "Output-Keypoints.jpg"; //@"Images\code.jpg";
             //RightPicture.ImageUrl = @"Images\code.jpg";
+
         }
 
         /// <summary>
@@ -186,14 +196,15 @@ namespace VandyHacksWebApp
         {
             if (chooseGloveTypeBtn.BackColor == Color.Aqua)
             {
-                chooseGloveTypeBtn.Text = "Change to Womens'";
+                chooseGloveTypeBtn.Text = "Change to Men's";
                 chooseGloveTypeBtn.BackColor = Color.Orange;
             }
             else
             {
-                chooseGloveTypeBtn.Text = "Change to Mens'";
+                chooseGloveTypeBtn.Text = "Change to Women's";
                 chooseGloveTypeBtn.BackColor = Color.Aqua;
             }
+            SetOutputs();
         }
     }
 }   
