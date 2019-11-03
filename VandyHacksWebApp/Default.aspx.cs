@@ -65,8 +65,8 @@ namespace VandyHacksWebApp
             picLbl3.Visible = true;
             PlaceholderLbl.Visible = false;
 
-            CenterPicture.ImageUrl = @"Images\code.jpg";
-            LeftPicture.ImageUrl = @"Images\code.jpg";
+            CenterPicture.ImageUrl = @"C:\Users\seanb\Documents\handpose\HandPose\"; //@"Images\code.jpg";
+            LeftPicture.ImageUrl = @"C:\\Users\seanb\documents\handpose\images\8.png"; //@"Images\code.jpg";
             RightPicture.ImageUrl = @"Images\code.jpg";
         }
 
