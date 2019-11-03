@@ -14,8 +14,8 @@ namespace VandyHacksWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            MongoDBController controller = new MongoDBController();
-            controller.Save(new DbDataset { Id="1", Circumference=10.1f, Size="Medium", Width=4.0f });
+            //MongoDBController controller = new MongoDBController();
+            //controller.Save(new DbDataset { Id="1", Circumference=10.1f, Size="Medium", Width=4.0f });
         
             if (!IsPostBack)
             {
@@ -27,6 +27,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
+            var files = FileSearcher.GetAllFileSets();
         }
 
         protected void ScanBtn_Click(object sender, EventArgs e)
