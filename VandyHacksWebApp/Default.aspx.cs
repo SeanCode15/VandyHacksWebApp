@@ -29,6 +29,7 @@ namespace VandyHacksWebApp
                 picLbl2.Visible = false;
                 PlaceholderLbl.Visible = true;
                 superJumbo.Visible = false;
+                chooseGloveTypeBtn.Visible = false;
             }
             
             //var files = FileSearcher.GetAllFileSets();
@@ -123,6 +124,7 @@ namespace VandyHacksWebApp
             picLbl2.Visible = true;
             PlaceholderLbl.Visible = false;
             superJumbo.Visible = true;
+            chooseGloveTypeBtn.Visible = true;
             gloveLabel.Text = sizeToDisplay;
 
 
@@ -144,7 +146,7 @@ namespace VandyHacksWebApp
             {
                 if (circ < 19)
                 {
-                    return "Extra Small";
+                    return "XS";
                 }
                 else if (19 <= circ && circ < 21.5)
                 {
@@ -160,18 +162,18 @@ namespace VandyHacksWebApp
                 }
                 else if (26.5 <= circ && circ < 29)
                 {
-                    return "Extra Large";
+                    return "XL";
                 }
                 else
                 {
-                    return "Extra Extra Large";
+                    return "XXL";
                 }
             }
             else
             {
                 if (circ < 15.875)
                 {
-                    return "Extra Small";
+                    return "XS";
                 }
                 else if (15.875 <= circ && circ < 17.125)
                 {
@@ -187,7 +189,7 @@ namespace VandyHacksWebApp
                 }
                 else
                 {
-                    return "Extra Large";
+                    return "XL";
                 }
             }
         }

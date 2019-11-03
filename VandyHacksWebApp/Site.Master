@@ -38,7 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="navbar navbar-dark bg-dark">
+        <nav style="margin-top:0px; margin:0px;" class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">FindFit</a>
         </nav>
         <div class="container body-content">
