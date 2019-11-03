@@ -28,7 +28,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
-            var lines = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
+            var dimensions = FileSearcher.GetFileInfo(MapPath("OutputDimensions/Outputs.txt"));
             //var files = FileSearcher.GetAllFileSets();
         }
 
@@ -58,7 +58,7 @@ namespace VandyHacksWebApp
             //startInfo.Arguments = @"/C C:\Users\seanb\Documents\handpose\HandPose>python handPoseImage.py " + fileNameWithExtension;
 
             //System.Diagnostics.Process.Start("CMD.exe", @"'/c C:\Users\seanb\Documents\handpose\HandPose>python handPoseImage.py " + fileNameWithExtension);
-            var workingDirectory = MapPath("Scripts");//Path.GetFullPath("Scripts");
+            /*var workingDirectory = MapPath("Scripts");//Path.GetFullPath("Scripts");
             var process = new Process
             {
                 StartInfo = new ProcessStartInfo
@@ -92,10 +92,10 @@ namespace VandyHacksWebApp
             {
                 var line = process.StandardOutput.ReadLine();
                 Console.WriteLine(line);
-            }
+            }*/
             //process.StartInfo = startInfo;
             //process.Start();
-            System.Threading.Thread.Sleep(2000);
+            //System.Threading.Thread.Sleep(2000);
             CenterPicture.Visible = true;
             LeftPicture.Visible = true;
             RightPicture.Visible = true;
