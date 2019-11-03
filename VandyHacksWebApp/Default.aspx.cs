@@ -27,7 +27,7 @@ namespace VandyHacksWebApp
                 picLbl3.Visible = false;
                 PlaceholderLbl.Visible = true;
             }
-            var files = FileSearcher.GetAllFileSets();
+            //var files = FileSearcher.GetAllFileSets();
         }
 
         protected void ScanBtn_Click(object sender, EventArgs e)
