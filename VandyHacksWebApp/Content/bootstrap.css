@@ -4502,6 +4502,8 @@ input[type="button"].btn-block {
 }
 
 .navbar-dark .navbar-brand {
+    margin-top: 0px;
+    padding-top: 0;
   color: #fff;
 }
 

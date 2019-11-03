@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head runat="server">
+<head runat="server" style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %></title>
@@ -16,8 +16,8 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
-    <form runat="server">
+<body style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
+    <form runat="server" style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px">
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -38,7 +38,7 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav style="margin-top:0px; margin:0px;" class="navbar navbar-dark bg-dark">
+        <nav style="margin-top:0px; margin:0px; border-top-width:0px; padding-top:0em; border-top-width:0px;" class="navbar navbar-dark bg-dark">
             <a class="navbar-brand" href="#">FindFit</a>
         </nav>
         <div class="container body-content">
