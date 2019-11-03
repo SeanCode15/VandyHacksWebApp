@@ -8,6 +8,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.IO;
 using System.Diagnostics;
+using IronPython.Hosting;
+using Microsoft.Scripting.Hosting;
+using SevenTiny.Cloud.ScriptEngine;
 
 namespace VandyHacksWebApp
 {
@@ -99,6 +102,46 @@ namespace VandyHacksWebApp
             //process.StartInfo = startInfo;
             //process.Start();
             //System.Threading.Thread.Sleep(2000);
+            //var ipy = Python.CreateRuntime();
+            //dynamic test = ipy.UseFile(@"C:\Users\seanb\Documents\handpose\HandPose\handPoseImage.py");
+            //var engine = Python.CreateEngine();
+
+            //dynamic scope = engine.CreateScope();
+            //ICollection<string> paths = pyEngine.GetSearchPaths();
+            //string dir = @"C:\Python27\Lib\";
+            //paths.Add(dir);
+            //string dir2 = @"C:\Python27\Lib\site-packages";
+            //paths.Add(dir2);
+            //pyEngine.SetSearchPaths(paths);
+            //string dir = Path.GetDirectoryName(@"C:\Users\seanb\Documents\handpose\HandPose\handPoseImage.py");
+            //ICollection<string> paths = engine.GetSearchPaths();
+
+            //if (!String.IsNullOrWhiteSpace(dir))
+            //{
+            //    paths.Add(dir);
+            //}
+            //else
+            //{
+            //    paths.Add(Environment.CurrentDirectory);
+            //}
+            //engine.SetSearchPaths(paths);
+            //engine.ImportModule("__future__.py");
+            //engine.ExecuteFile(@"C:\Users\seanb\Documents\handpose\HandPose\handPoseImage.py");
+                    //var psi = new ProcessStartInfo();
+                    //psi.FileName = @"C:\Users\seanb\Downloads\PyCharm\python-3.5.0-amd64.exe";
+                    //var script = @"C:\Users\seanb\Documents\handpose\HandPose\handPoseImage.py";
+                    //psi.Arguments=$"\"{script}\"";
+                    //psi.UseShellExecute = false;
+                    //psi.CreateNoWindow = true;
+                    //psi.RedirectStandardOutput = true;
+                    //psi.RedirectStandardError = true;
+                    //var errors = string.Empty;
+                    //var results = string.Empty;
+                    //using (var process = Process.Start(psi))
+                    //{
+                    //    errors = process.StandardError.ReadToEnd();
+                    //    results = process.StandardOutput.ReadToEnd();
+                    //}
             SetOutputs();
         }
         private void SetOutputs()
@@ -128,8 +171,8 @@ namespace VandyHacksWebApp
             gloveLabel.Text = sizeToDisplay;
 
 
-            CenterPicture.ImageUrl = "Output-Skeleton.jpg"; //@"Images\code.jpg";
-            LeftPicture.ImageUrl = "Output-Keypoints.jpg"; //@"Images\code.jpg";
+            CenterPicture.ImageUrl = (@"~/Images/KeypointOutput.jpg"); //@"Images\code.jpg";
+            LeftPicture.ImageUrl = (@"~/Images/SkeletonOutput.jpg"); //@"Images\code.jpg";
             //RightPicture.ImageUrl = @"Images\code.jpg";
 
         }
@@ -144,23 +187,24 @@ namespace VandyHacksWebApp
         {
             if (gender)
             {
-                if (circ < 19)
+               
+                if (circ < 16)
                 {
                     return "XS";
                 }
-                else if (19 <= circ && circ < 21.5)
+                else if (circ < 17.1)
                 {
                     return "Small";
                 }
-                else if (21.5 <= circ && circ < 24)
+                else if (circ < 18.2)
                 {
                     return "Medium";
                 }
-                else if (24 <= circ && circ < 26.5)
+                else if (circ < 19.2)
                 {
                     return "Large";
                 }
-                else if (26.5 <= circ && circ < 29)
+                else if (circ < 20.4)
                 {
                     return "XL";
                 }
@@ -171,19 +215,19 @@ namespace VandyHacksWebApp
             }
             else
             {
-                if (circ < 15.875)
+                if (circ < 15)
                 {
                     return "XS";
                 }
-                else if (15.875 <= circ && circ < 17.125)
+                else if (circ < 16.1)
                 {
                     return "Small";
                 }
-                else if (17.125 <= circ && circ < 18.375)
+                else if (circ < 17.2)
                 {
                     return "Medium";
                 }
-                else if (18.375 <= circ && circ < 19.625)
+                else if (circ < 18.2)
                 {
                     return "Large";
                 }

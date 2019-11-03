@@ -35,7 +35,7 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="text-center">
-                    <asp:Label ID="picLbl1" runat="server" Text="Inital Picture"></asp:Label>
+                    <asp:Label ID="picLbl1" runat="server" Text="Skeleton Picture"></asp:Label>
                 </div>
             </div>
         
