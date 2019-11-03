@@ -14,8 +14,8 @@ namespace VandyHacksWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            MongoDBController controller = new MongoDBController();
-            controller.Save(new DbDataset { Id="1", Circumference=10.1f, Size="Medium", Width=4.0f });
+            //MongoDBController controller = new MongoDBController();
+            //controller.Save(new DbDataset { Id="1", Circumference=10.1f, Size="Medium", Width=4.0f });
         
             if (!IsPostBack)
             {
@@ -53,8 +53,8 @@ namespace VandyHacksWebApp
             picLbl3.Visible = true;
             PlaceholderLbl.Visible = false;
 
-            CenterPicture.ImageUrl = @"Images\code.jpg";
-            LeftPicture.ImageUrl = @"Images\code.jpg";
+            CenterPicture.ImageUrl = @"C:\Users\seanb\Documents\handpose\HandPose\"; //@"Images\code.jpg";
+            LeftPicture.ImageUrl = @"C:\\Users\seanb\documents\handpose\images\8.png"; //@"Images\code.jpg";
             RightPicture.ImageUrl = @"Images\code.jpg";
         }
 
